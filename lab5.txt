@@ -1,0 +1,288 @@
+ex1
+//Alaa Hawsawi, 27,
+#include <iostream>
+using namespace std;
+int main()
+{
+	int m, n;
+	for (n=1; n<=9;n++)
+	{
+		m=n;
+		cout<<m<<"\t";
+	for (m=1; m<=9;m++)
+		cout<<m*n<<"\t";
+	}
+	cout<<endl;
+	return 0;
+
+
+}
+ex2
+//Alaa Hawsawi, 27,
+#include <iostream>
+using namespace std;
+int main()
+{
+	int l=532, s=112,r=l%s;
+	int i;
+
+	for (i=l; s>0;i--)
+	{
+		cout<<"("<<l<<","<<s<<")"<<endl;
+		cout<<l<<"/"<<s<<"="<<l/s<<endl;
+		r=l%s;
+		cout<<l<<"%"<<s<<"="<<r<<endl;
+		l=s;
+		s=r;
+	}
+	cout<<"Stop"<<endl;
+	
+	return 0;
+
+
+}
+ex3
+ //Alaa Hawsawi, 27,
+#include <iostream>
+using namespace std;
+int main()
+{
+
+	int stars;
+	cout<<"Enter the numbers of stars"<<endl;
+	cin>>stars;
+	if (stars%2==0)
+		cout<<"ERROR"<<endl;
+	else
+	{
+		int count=0;
+		int half=stars/2;
+		int num_of_lines = (stars / 2) + 1;
+		for (int i=1; i<=num_of_lines;i++)
+		{
+			for (int space=half;space>=1;space=space-1)
+	
+				cout<<" ";
+			for (int t=1;t<=1+count;t=t+1)
+	
+				cout<<"*";
+				count=count+2;
+				cout<<endl;
+				half--;
+		}
+		cout<<endl;
+	
+	}
+	
+	return 0;
+
+
+}
+ex4
+ //Alaa Hawsawi, 27,
+#include <iostream>
+using namespace std;
+int main()
+{
+	int n;
+	
+	for (n=3;n<=100;n++)
+	{
+	
+		
+		bool prime = true;
+		for (int x=2;x <n-1 ;x++)
+		{
+			if (n%x == 0)
+				prime = false;
+		}
+			
+		if (prime == true ) 
+			cout<<n<<",";
+	}
+	cout<<endl;
+	
+	
+	return 0;
+}
+ex4
+//Alaa Hawsawi, 27,calculator
+
+#include <iostream>
+using namespace std;
+double ADD(double num1, double num2);
+double SUB(double num1, double num2);
+double MUL(double num1, double num2);
+double DIV(double num1, double num2);
+int main ()
+{
+	int code;
+	double n1, n2, t;
+	cout<<"1.Add \n";
+	cout<<"2.Subtract\n";
+	cout<<"3.Multiply \n";
+	cout<<"4.Divide \n";
+	cout<<"enter the two double numbers\n";
+		cin>>n1>>n2;
+		do
+	{
+		
+	cout<<"choise 1,2,3 or 4"<<endl;
+	cin>>code;
+	
+	switch (code)
+	{
+	case 1:
+
+		t=ADD (n1, n2) ;
+		cout<<n1<<"+"<<n2<<"="<<t<<endl;
+		break;
+
+	case 2:
+		t=SUB (n1, n2) ;
+		cout<<n1<<"-"<<n2<<"="<<t<<endl; 
+		break;
+	case 3:
+		t=MUL (n1, n2) ;
+		cout<<n1<<"*"<<n2<<"="<<t<<endl; 
+		break;
+	case 4:
+		t=DIV (n1, n2) ;
+		cout<<n1<<"/"<<n2<<"="<<t<<endl; 
+		break;
+	}
+	}while (code < 4);
+	
+	return 0;
+}
+double ADD(double num1, double num2)
+{
+	return (num1+num2);
+}
+double SUB(double num1, double num2)
+{
+	return (num1-num2);
+
+}
+double MUL(double num1, double num2)
+{
+	return (num1*num2);
+}
+double DIV(double num1, double num2)
+{
+	return (num1/num2);
+}
+ex6
+//Alaa Hawsawi, 27,calculator change
+#include <iostream>
+using namespace std;
+int cal_dollars (double num);
+int cal_quarters (double num);
+int cal_dimes (double num);
+int cal_nickels (double num);
+int cal_pennies (double num);
+int main ()
+{
+
+
+	double change ;
+	int dollars ;
+	int quarters;
+	int dimes ;
+	int nickels ;
+	int pennies ;
+
+	cout<<"Enter the money\n";
+	cin>>change;
+	if (change>0)
+	{
+		dollars= cal_dollars(change);
+		quarters = cal_quarters(change);
+		dimes = cal_dimes(change);
+		nickels = cal_nickels(change);
+		pennies = cal_pennies(change);
+	
+		
+		cout<<"Dollars: "<<dollars<<endl;
+		cout<<"Quarters: "<<quarters<<endl;
+		cout<<"Dimes: "<<dimes<<endl;
+		cout<<"Nickels: "<<nickels<<endl;
+		cout<<"Pennies: "<<pennies<<endl;
+	}
+	else
+		cout<<endl;
+
+	return 0;
+}
+int cal_dollars (double num)
+{
+	int dollars=100;
+	int cha=100*num;
+	return (cha/dollars);
+}
+int cal_quarters (double num)
+{
+	int quarters=25;
+	int cha=100*num;
+	return (cha%100/quarters);
+}
+int cal_dimes (double num)
+{
+	int dimes=10;
+	int cha=100*num;
+	return (cha%100%25/dimes);
+}
+int cal_nickels (double num)
+{
+	int nickels=5;
+	int cha=100*num;
+	return (cha%100%25%10/nickels);
+}
+int cal_pennies (double num)
+{
+	int pennies=1;
+	int cha=100*num;
+	return (cha%100%25%10%5/pennies);
+}
+ex7
+//Alaa Hawsawi, 27,calculator
+
+#include <iostream>
+#include <cmath>
+int area (int num1, int num2, int num3);
+bool check (int num1, int num2, int num3);
+using namespace std;
+
+
+int main ()
+{
+	int a,b,c,calc_area;
+	cout<<"enter two sides"<<endl;
+	cin>>a>>b;
+	cout<<"The sum of two sides is  "<<a+b<<endl;
+	cout<<"Enter the 3rd side it must be greater than the sum\n";
+	cin>>c;
+	
+	bool t= check(a,b,c);
+	if(t)
+	{
+	double s=0.5*(a+b+c);
+	calc_area= area (a,b,c);
+	cout<<"The area ="<<calc_area<<endl;
+	}
+	if(!t)
+	{
+		cout<<"ERROR\n";
+	}
+	
+	return 0;
+}
+int area (int num1, int num2, int num3)	
+{
+	double s=0.5*(num1+num2+num3);
+	return (sqrt(s*(s-num1)*(s-num2)*(s-num3)));
+}
+bool check (int num1, int num2, int num3)
+{
+ return ((num1+num2)>num3);
+}

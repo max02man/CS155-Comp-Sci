@@ -1,0 +1,541 @@
+Ex1
+//,periodic table
+#include<iostream>
+#include <string>
+using namespace std;
+const enum ele {H=1,HE,Li,Be,B,C,N,O,F,Ne,Na,Mg,Al,Si,P};
+class periodic  //one element
+{
+private:
+	string name ;
+	int ato_num;
+	double ato_wei;
+	int num_prot;
+	int period;
+	int group;
+
+	public:
+	void set_name(string);
+	void get_name();
+	void set_ato_num(int val);
+	void get_ato_num();
+	void set_ato_wei(double val);
+	void get_ato_wei();
+	void set_num_prot(int val);
+	void get_num_prot();
+	void set_period(int val);
+	void get_period();
+	void set_group(int val);
+	void get_group();
+
+};
+int main()
+{
+	periodic H, He,Be;
+	H.set_name ( "Hydrogen");
+	H.set_ato_num (1);
+	H.set_ato_wei(1.004);
+	H.set_num_prot(0);
+	H.set_period (1);
+	H.set_group (1);
+	He.set_name ( "Helium");
+	He.set_ato_num (2);
+	He.set_ato_wei(4.002);
+	He.set_num_prot(2);
+	He.set_period (1);
+	He.set_group (18);
+	Be.set_name ( "Beryllium");
+	Be.set_ato_num (4);
+	Be.set_ato_wei(9.012);
+	Be.set_num_prot(5);
+	Be.set_period (2);
+	Be.set_group (2);
+	H.get_name ();
+	H.get_ato_num ();
+	H.get_ato_wei();
+	H.get_num_prot();
+	H.get_period ();
+	H.get_group ();
+	He.get_name ();
+	He.get_ato_num ();
+	He.get_ato_wei();
+	He.get_num_prot();
+	He.get_period ();
+	He.get_group ();
+	Be.get_name ();
+	Be.get_ato_num ();
+	Be.get_ato_wei();
+	Be.get_num_prot();
+	Be.get_period ();
+	Be.get_group ();
+	return 0;
+}
+
+void periodic::set_name(string val)
+{	
+	name = val; 
+}
+void periodic::get_name()
+{
+	cout <<"Name: "<<name<<endl; 
+}
+void periodic::set_ato_num(int val)
+{
+	ato_num= val;
+}
+void periodic::get_ato_num()
+{
+	cout<<"Atomic Number: "<<ato_num<<endl;
+}
+void periodic::set_ato_wei(double val)
+{
+	ato_wei=val;
+}
+void periodic::get_ato_wei()
+{
+	cout<<"Atomic Weight: "<<ato_wei<<endl;
+}
+void periodic::set_num_prot(int val)
+{
+	num_prot=val;
+}
+void periodic::get_num_prot()
+{
+	cout<<"Number of protons: "<<num_prot<<endl;
+}
+void periodic::set_period(int val)
+{
+	period=val;
+}
+void periodic::get_period()
+{
+	cout<<"Period: "<<period<<endl;
+}
+void periodic::set_group(int val)
+{
+	group=val;
+}
+void periodic::get_group()
+{
+	cout<<"Group: "<<group<<endl;
+	cout<<"---------------------------"<<endl;
+}
+Ex2
+//,pstudent Grade
+#include<iostream>
+#include <string>
+using namespace std;
+class studgrade
+{
+private:
+	int qz1;
+	int qz2;
+	int mid;
+	int fin;
+	double num_grade;
+	char lett;
+public:
+	studgrade();
+	void set_qz1(int n);
+	void set_qz2(int n);
+	void set_mid(int n);
+	void set_fin(int n);
+	void cal_num_grade();
+	void cal_lett();
+	void print();
+
+};
+int main()
+{
+	studgrade st1;
+	int quz1,quz2,miud,fiun;
+	cout<<"Enter quiz1 and Quiz2:"<<endl;
+	cin>>quz1>>quz2;
+	st1.set_qz1(quz1);
+	st1.set_qz2(quz2);
+	cout<<"Enter Midterm and Final:"<<endl;
+	cin>>miud>>fiun;
+	st1.set_mid(miud);
+	st1.set_fin(fiun);
+	st1.print();
+	return 0;
+}
+
+studgrade::studgrade()
+{
+	 qz1=0;
+	 qz2=0;
+	 mid=0;
+	 fin=0;
+	 num_grade=0;
+	 lett=' ';
+}
+
+void studgrade:: set_qz1(int n)
+{	qz1=n;
+
+}
+void studgrade::set_qz2(int n)
+{
+	qz2=n;
+}
+void studgrade::set_mid(int n)
+{
+	mid=n;
+}
+void studgrade::set_fin(int n)
+{
+	fin=n;
+}
+void studgrade::cal_num_grade()
+{
+	num_grade=((qz1+qz2+mid+fin)/1000.0)*100;
+}
+void studgrade::cal_lett()
+{
+	if (num_grade>=90)
+		lett='A';
+	else if (num_grade>=80)
+		lett='B';
+	else if (num_grade>=70)
+		lett='C';
+	else if (num_grade>=60)
+		lett='D';
+	else 
+		lett='F';
+
+}
+void studgrade::print()
+{
+	cal_num_grade();
+	cal_lett();
+	cout<<"Quize1: "<<qz1<<endl<<"Quize2: "<<qz2<<endl<<"Midrerm: "<<
+		mid<<endl<<"Final: "<<fin<<endl<<"Totll your grade: "<<
+		num_grade<<endl<<"Grade letter: "<<lett<<endl;
+}
+==============
+ex3
+//alaa hawsawi,27,planet
+#include<iostream>
+#include <string>
+using namespace std;
+class planet 
+{
+private:
+	string name ;
+	double gravity;
+
+	public:
+	planet();
+	planet (string planetn);
+	double ovserver (int w);
+	string planetn();
+
+};
+int main()
+{
+	string n;
+	cout<<"Enter the planet name: ";
+	cin>>n;
+	planet p (n);
+	int w;
+	cout<<"Enter your weight in Kgs: ";
+	cin>>w;
+	cout<<"your weight on "<<n<<" of a "<<w<<"kgs is: "<<p.ovserver(w)<<"kgs"<<endl;
+	return 0;
+}
+planet::planet()
+{
+	name="Earth";
+	gravity=1.0;
+}
+planet::planet (string planetn)
+{
+	name= planetn;
+	if (name == "Mercury")
+		gravity =0.4155;
+	else if (name =="Venus")
+		gravity=0.8975;
+	else if (name =="Earth")
+		gravity=1.0;
+	else if (name =="Moon")
+		gravity=0.166;
+	else if (name =="Mars")
+		gravity=0.3507;
+	else if (name =="Jupiter")
+		gravity=2.5374;
+	else if (name =="Saturn")
+		gravity=1.0677;
+	else if (name =="Uranus")
+		gravity=0.8947;
+	else if (name =="Neptune")
+		gravity=1.1794;
+	else if (name =="Pluto")
+		gravity=0.899;
+	else 
+		cout<<"You entered incorrect planet name"<<endl;
+}
+string planet::planetn()
+{
+	return name;
+}
+double planet::ovserver(int w)
+{
+	return 1.0*w*gravity;
+}
+Ex4
+//alaa hawsawi, 27,Phone
+#include<iostream>
+#include <string>
+using namespace std;
+const enum type {Home=1, Office ,Fax,Cell,Pager};
+class phone
+{
+private:
+	int num1;
+	int num2;
+	int num3;
+	type n;
+
+public:
+	phone();
+	phone(int n1,int n2, int n3);
+	void set_num1(int n);
+	void set_num2(int n);
+	void set_num3(int n);
+	void set_type(type n);
+	int get_num1();
+	int get_num2();
+	int get_num3();
+	void get_type(type n);
+	void compare(int n,int n2, int n3);
+};
+bool compare(phone p1, phone p2);
+int main()
+{
+	phone t;
+	int num1,num2,num3;
+	string n;
+	cout<<"enter country code, area code and number of the phone"<<endl;
+	cin>>num1>>num2>>num3;
+	t.set_num1(num1);
+	t.set_num2(num2);
+	t.set_num3(num3);
+	t.get_num1();
+	t.get_num2();
+	t.get_num3();
+	cout<<"Enter the type of the number"<<endl;
+	cin>>n;
+	if(n == "Home")
+	{
+		t.set_type(Home);
+		t.get_type(Home);
+	}
+	else if(n == "Office")
+	{
+		t.set_type(Office);
+		t.get_type(Office);
+	}
+	else if(n == "Fax")
+	{
+		t.set_type(Fax);
+		t.get_type(Fax);
+	}
+	else if(n == "Fax")
+	{
+		t.set_type(Fax);
+		t.get_type(Fax);
+	}
+	else if(n == "Cell")
+	{
+		t.set_type(Cell);
+		t.get_type(Cell);
+	}
+	else if(n == "Pager")
+	{
+		t.set_type(Pager);
+		t.get_type(Pager);
+	}
+	else 
+		cout<<" you entered the type wrong \n";
+	t.compare(num1,num2,num3);
+	return 0;
+}
+
+phone::phone()
+{
+	num1=0;
+	 num2=0;
+	 num3=0;
+	 n = Home;
+}
+phone::phone(int n1,int n2, int n3)
+{
+	num1=n1;
+	 num2=n2;
+	 num3=n3;
+	 n = Home;
+}
+
+void phone:: set_num1(int n)
+{	
+	num1=n;
+}
+void phone::set_num2(int n)
+{
+	num2=n;
+}
+void phone::set_num3(int n)
+{
+	num3=n;
+}
+void phone::set_type(type x)
+{
+	n = x;
+}
+int phone::get_num1()
+{	
+	return num1;
+}
+int phone::get_num2()
+{
+	return num2;
+}
+int phone::get_num3()
+{
+	return num3;
+}
+void phone::get_type(type x)
+{
+	cout<<"Type: "<<x<<endl;
+}
+void phone::compare(int n1,int n2, int n3)
+{
+	cout<<"Compare phone numbers"<<num3<<endl;
+
+	if(num1 == n1 && num2==n2 && num3==n3)
+	{
+	cout<<"This number is exsixt "<<endl;
+	}
+	else
+	{
+	cout<<"No Such number"<<endl;
+	}
+
+}
+======================
+Ex5
+//alaa hawsawi,27,Phone
+#include <iostream>
+#include <cstring>
+#include <string>
+#include<fstream>
+#include <strstream>
+using namespace std;
+const enum opr {add, sub, mul, dev};
+template <class t>
+class calculator
+{
+private :
+	t padd,psub,pmul,pdev;
+	t a, b;
+	opr v;
+public:
+	calculator();
+	void set_add(t a, t b);
+	void get_add();
+	void set_sub(t a, t b);
+	void get_sub();
+	void set_dev(t a, t b);
+	void get_dev();
+	void set_mul(t a, t b);
+	void get_mul();
+};
+int main()
+{
+	calculator<int> op1;
+	int n1,n2;
+	cout<<"Enter the first number: ";
+	cin>>n1;
+	cout<<"Enter the second number: ";
+	cin>>n2;	
+	op1.set_add(n1,n2);
+	op1.set_sub(n1,n2);
+	op1.set_mul(n1,n2);
+	op1.set_dev(n1,n2);
+	op1.get_add();
+	op1.get_sub();
+	op1.get_mul();
+	op1.get_dev();
+		calculator<double> op2;
+	int n3,n4;
+	cout<<"Enter the first number: ";
+	cin>>n3;
+	cout<<"Enter the second number: ";
+	cin>>n4;	
+	op2.set_add(n3,n4);
+	op2.set_sub(n3,n4);
+	op2.set_mul(n3,n4);
+	op2.set_dev(n3,n4);
+	op2.get_add();
+	op2.get_sub();
+	op2.get_mul();
+	op2.get_dev();
+	return 0;
+}
+template <class t>
+calculator<t>::calculator()
+{
+	a=0;
+	b=0;
+	v=add;
+}
+template <class t>
+void calculator<t>::set_add(t a1, t b1)
+{	
+	a = a1;
+	b= b1;
+	padd=a+b;
+}
+template <class t>
+void calculator<t>:: get_add()
+{
+
+	cout<<a<<"+"<<b<<"="<<padd<<endl;
+}
+template <class t>
+void calculator<t>::set_sub(t a1, t b1)
+{
+	a = a1;
+	b=b1;
+	psub=a-b;
+}
+template <class t>
+void calculator<t>::get_sub()
+{
+	cout<<a<<"-"<<b<<"="<<psub<<endl;
+}
+template <class t>
+void calculator<t>::set_mul(t a1, t b1)
+{
+	a = a1;
+	b=b1;
+	pmul=a*b;
+}
+template <class t>
+void calculator<t>::get_mul()
+{
+	cout<<a<<"*"<<b<<"="<<pmul<<endl;
+}
+template <class t>
+void calculator<t>::set_dev(t a1, t b1)
+{
+	a = a1;
+	b=b1;
+	pdev=a/b;
+}
+template <class t>
+void calculator<t>::get_dev()
+{
+	cout<<a<<"/"<<b<<"="<<pdev<<endl;
+}

@@ -1,0 +1,154 @@
+//Alaa Hawsawi, 27, commas
+#include <iostream>
+using namespace std;
+void comma (int t);
+int main ()
+{
+	int y;
+	cout<<"enter the integer"<<endl;
+	cin>>y;
+	comma(y);
+	
+	return 0;
+}
+void comma (int t)
+{
+	int r;
+	if (t>1000)
+	{
+	comma (t/1000);
+	r=t%1000;
+	t=t/1000;
+	cout<<t<<","<<r;
+	}
+}
+
+
+ex2
+//Alaa Hawsawi, 27, commas
+#include <iostream>
+using namespace std;
+double power (double t,double x);
+int main ()
+{
+	double t,x;
+	cout<<"enter the integer"<<endl;
+	cin>>t>>x;
+	double result = power(t,x);
+	cout << result<<endl;
+
+	
+	return 0;
+}
+double power (double t,double x)
+{
+	if (x>0)
+		{
+			return t * power (t,x-1);
+		}
+	else
+		return 1;
+}
+ex3
+//Alaa Hawsawi, 27, converts time
+#include <iostream>
+using namespace std;
+int fib (int n);
+int main ()
+{
+	int t;
+	cout<<"enter the Fibonacci number"<<endl;
+	cin>>t;
+	int result = fib(t);
+	cout << result << endl;
+	return 0;
+}
+int fib (int n)
+{
+	
+	if (n==0)
+		return 0;
+	else if (n==1)
+		return 1;
+	else 
+		 return fib(n-1)+ fib(n-2);
+	
+	
+}
+ex4
+//Alaa Hawsawi, 27, ex4
+#include <iostream>
+#include <string>
+using namespace std;
+template <class r>
+r minu (r n1, r n2, r n3, r min);
+int main ()
+{
+int t=0,x=0, e=0, o=0,k=0;
+ k= minu(t,x,e,o);
+cout<<"the minimum is  "<<k<<endl;
+	return 0;
+}
+template <class r>
+r minu (r n1, r n2, r n3,r min)
+{
+	cout<<"enter the 3 integers"<<endl;
+	cin>> n1>>n2>>n3;
+	if (n1<n2 && n1<n3)
+		min= n1;
+	else if (n2<n3 && n2<n1)
+		min=n2;
+	else 
+	min =n3;
+	return min;
+}
+ex5
+//Alaa Hawsawi, 27, ex5
+#include <iostream>
+#include <string>
+using namespace std;
+template <class r>
+r minu (r n1, r n2, r n3, r max );
+int main ()
+{
+int t=0,x=0, e=0, o=0,k=0;
+ k= minu(t,x,e,o);
+cout<<"the minimum is  "<<k<<endl;
+	return 0;
+}
+template <class r>
+r minu (r n1, r n2, r n3,r max)
+{
+	cout<<"enter the 3 integers"<<endl;
+	cin>> n1>>n2>>n3;
+	if (n1>n2 && n1>n3)
+		max= n1;
+	else if (n2>n3 && n2>n1)
+		max=n2;
+	else 
+	max =n3;
+	return max;
+}
+ex6
+//Alaa Hawsawi, 27, ex6
+#include <iostream>
+#include <string>
+using namespace std;
+template <class r>
+r sum (r n1, r n2, r sum );
+int main ()
+{
+string t,x, e,k;
+ k= sum(t,x,e);
+cout<<"the sum is  "<<k<<endl;
+	return 0;
+}
+template <class r>
+r sum (r n1, r n2,r sum)
+{
+	cout<<"enter the 2 integers"<<endl;
+	cin>> n1>>n2;
+	sum=n1+n2;
+	return sum;
+}
+

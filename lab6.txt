@@ -1,0 +1,218 @@
+ex1
+//Alaa Hawsawi, 27
+#include <iostream>
+int filp (int num);
+using namespace std;
+int main ()
+{
+	int toss;
+	cout<<"How many times would you like the program to toss the coin?\n";
+	cin>>toss;
+	filp(toss);
+
+return 0;
+}
+int filp (int num)
+{
+		int head=(num/2)+1;
+	int tails=(num/2)-1;
+	cout<<"Number of heads: "<<head<<endl;
+	cout<<"Number of tails: "<<tails<<endl;
+	return (head,tails);
+}
+ex2
+//AlaaHawsawi, 27
+#include<iostream>
+#include<time.h>
+bool check (intnum, int guess);
+usingnamespacestd;
+int main ()
+{
+	intram,ge=-5;
+	srand (time(0));
+	ram=rand()%100+1;
+	cout<<"I have a number between 1 to 100\n"<<"Can you guess my number\n";
+	cout<<"Please Type your guess\n";
+	while (ge !=ram)
+	{
+	cin>>ge;
+	boolans = check(ram,ge);
+	}
+return 0;
+}
+bool check (intnum, int guess)
+{
+	if (num==guess)
+	{
+		cout<<"Excellent! You guessed the number!\n";
+		returntrue;
+	}
+	if (num>guess)
+	{
+		cout<<"too Low. try Again\n";
+		returnfalse;
+	}
+	if (num<guess)
+	{
+		cout<<"too High. try Again\n";
+	returnfalse;
+	}
+	return (true, false);
+}
+ex3
+//AlaaHawsawi, 27
+#include<iostream>
+voidsawp_day(int& d1, int& d2);
+voidsawp_month(int& m1, int& m2);
+boolvalid_date(intday,int month);
+
+intcalc_days(int day1,int day2,int month1,int month2);
+usingnamespacestd;
+int main ()
+{
+	int d1,m1,d2,m2;
+	cout<<"Enter the first date: Day and Month\n";
+	cin>>d1>>m1;
+	boolch=valid_date(d1,m1);
+	while (ch == false)
+	{	
+		cout<<"Try again"<<endl;
+		cin>>d1>>m1;
+		ch=valid_date(d1,m1);
+	}
+		if (ch == true )
+	{
+	cout<<"Enter the second date: Day and Month\n";
+	cin>>d2>>m2;
+	bool ch1=valid_date(d2,m2);
+	while (ch1 == false)
+	{	
+		cout<<"Try again"<<endl;
+		cin>>d2>>m2;
+		ch1=valid_date(d2,m2);
+	}
+	if (ch1 ==true)
+	{
+	boolvalid_date=true;
+	calc_days(d1,d2,m1,m2);
+	}
+	}
+	
+return 0;
+}
+boolvalid_date(intday,int month)
+{	
+	if (day<=28 && month==2)
+	{
+		returntrue;
+	}
+	if (day<32 && month<2)
+	{
+		returntrue;
+	}
+	if (day<32 &&month<13 && month !=2)
+	{
+		returntrue;
+	}
+	else
+	{
+		returnfalse;
+	}
+	
+}
+voidsawp_day(int& d1, int& d2)
+{
+
+	int tamp=d1;
+	d1=d2;
+	d2=tamp;
+}
+voidsawp_month(int& m1, int& m2)
+	{
+	int tamp2=m1;
+	m1=m2;
+	m2=tamp2;
+
+}
+intcalc_days(int day1,int day2,int month1,int month2)
+{
+	if (day1<day2)
+		sawp_day(day1, day2);
+	if (month1<month2)
+		sawp_month (month1,month2);
+	int day;
+	int month;
+	int total;
+	boolvalid_date= true;
+	
+	if ( valid_date == true)
+	{
+	day=day1-day2;
+	if ((month1 ==2)|| (month2==2))
+	{
+	month=(month1-month2)*28;
+	}
+	else
+	month=(month1-month2)*30;
+	total=day+month;
+	cout<<"m"<<month<<endl;
+	cout<<"d"<<day<<endl;
+	cout<<"days=  "<<total<<endl;
+	}
+	return (total);
+}
+ex4
+//Alaa Hawsawi, 27
+#include <iostream>
+int cur_hr (int&ch);
+int cur_min (int&cm);
+int wait_hr (int&wh);
+int wait_min (int&wm);
+void calc (int&ch,int&cm,int&wh,int&wm);
+using namespace std;
+int main ()
+{
+	int ch,cm,wh,wm;
+	calc (ch,cm,wh,wm);
+	
+return 0;
+}
+int cur_hr (int&ch)
+{
+	cin>>ch;
+	return (ch);
+}
+int cur_min (int&cm)
+{cin>>cm;
+	return (cm);}
+int wait_hr (int&wh)
+{
+	cin>>wh;
+	return ( wh);}
+int wait_min (int&wm)
+{
+	cin>>wm;
+	return (wm);}
+void calc (int&ch,int&cm,int&wh,int&wm)
+{
+	int th=0,tm=0;
+	cout<<"Enter the current time: hour and minutes\n";
+	cur_hr (ch);
+	cur_min(cm);
+	cout<<"Enter the number of : hours and minutes to wait\n";
+	wait_hr ( wh);
+	wait_min (wm);
+	th=ch+wh;
+	if (th>24)
+	{
+		th=th-24;
+}
+
+	tm=cm+wm;
+	if (tm>60) 
+	{
+		tm=tm-60;
+		th=th+1;
+	}
+	cout<<"Arrival Time: "<<th<<": "<<tm<<endl;
+}

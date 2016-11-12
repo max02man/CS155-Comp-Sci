@@ -1,0 +1,197 @@
+ex1
+//Alaa hawsawi, 27, Cents
+#include <iostream>
+using namespace std;
+int main()
+{
+	double quarters, dimes, nickels, sum;
+	cout<<"Enter how many quarters you have\n";
+	cin>>quarters;
+	quarters= 0.25 * quarters;
+	cout<<"Enter how many dimes you have\n";
+	cin>>dimes;
+	dimes= 0.10 * dimes;
+	cout<<"Enter how many nickels you have\n";
+	cin>>nickels;
+	nickels= 0.05 * nickels;
+	sum= quarters + dimes +nickels;
+	cout<<"You have\t"<<sum<<"cents"<<endl;
+	return 0;
+}
+ex2
+//Alaa Hawsawi, 27, Distance
+#include <iostream>
+using namespace std;
+int main()
+{
+	double distance, time, acceleration;
+	cout<<"Enter how many seconds\n";
+	cin>>time;
+	acceleration=32;
+	distance=(acceleration*(time*time))/2;
+	cout<<"the distance is\t"<<distance<<endl;
+	return 0;
+}
+
+ex3: work 
+//Alaa Hawsawi, 27,
+#include <iostream>
+using namespace std;
+int main()
+{
+	int num;
+	double area, volume, radius, radius2;
+	cout<<"Enter 1 to display a welcome message\n"<<"Enter 2 to calculate the surface area of a sphere\n"<<"Enter 3 to calculate the volume of a sphere\n";
+	
+	cin>>num;
+	if (num == 1)
+	
+	cout<<"Welcome\n";
+
+	cout<<"Enter the radius for surface are of the a sphere\n";
+
+		if (num ==2)
+	
+		cout<<"Enter the radius for surface are of the a sphere\n";
+		cin>>radius;
+		area=(4*3.14*(radius*radius));
+		cout<<"\t"<<area<<endl;
+		
+		{
+		cout<<"Enter the radius for volume are of the a sphere\n";
+		cin>> radius2;
+		volume=(3*3.14*(radius2*radius2*radius2))/4;
+		cout<<"\t"<<volume<<endl;
+		}
+	
+
+		return 0;
+}
+ex3 good one
+//Alaa Hawsawi, 27, surface and volume
+#include <iostream>
+using namespace std;
+int main()
+{
+	int num;
+	double area, volume, radius, radius2;
+	cout<<"Enter 1 to display a welcome message\n"<<"Enter 2 to calculate the surface area of a sphere\n"<<"Enter 3 to calculate the volume of a sphere\n";
+	
+	cin>>num;
+	switch (num)
+	{
+	case 1:
+	cout<<"Welcome\n";
+
+	break;
+	case 2:
+	case 3:
+		cout<<"Enter the radius for surface are of the a sphere\n";
+		cin>>radius;
+		area=(4*3.14*(radius*radius));
+		cout<<"\t"<<area<<endl;
+		
+		cout<<"Enter the radius for volume are of the a sphere\n";
+		cin>> radius2;
+		volume=(3*3.14*(radius2*radius2*radius2))/4;
+		cout<<"\t"<<volume<<endl;
+	break;
+	}
+		return 0;
+}
+ex4
+//Alaa Hawsawi, 27, Meeting
+#include <iostream>
+using namespace std;
+int main()
+{
+	double max, att;
+	cout<<"Meeting room\n";
+	cout<<"Please Enter Maximum Room Capcity\n";
+	cin>>max;
+	cout<<"Please Enter Attend people\n";
+	cin>>att;
+	cout<<"Maximum Room Capcity:\t"<<max<<endl;
+	cout<<"Attend people:\t"<<att<<endl;
+	if (att<= max)
+		cout<<"It is legal to hold the meeting\n"<<"It is legally to attend\t"<<max-att<<"\t persons"<<endl;
+	if(att>max)
+		cout<<"The meeting cannot be held as due to fire reguations\n"<<"They are\t"<<att-max<<"\t extra peolpe"<<endl;
+return 0;
+}
+ex5
+//Alaa hawsawi, 27, even and odd
+#include <iostream>
+using namespace std;
+int main()
+{
+	int num;
+
+	cout<<"please enter any number\n";
+	
+	cin>>num;
+
+	if (num%2 == 0)
+	cout<<"even number\n";
+	else
+	cout<<"odd number\n";
+	return 0;
+}
+ex6
+//Alaa Hawsawi, 27, year days
+#include <iostream>
+using namespace std;
+int main()
+{
+	int year, month;
+	
+	cout<<"Please enter the month number 1-12.\n";
+	cin>>month;
+	cout<<"Month is\t"<<month<<endl;
+	
+
+	if (month >=13)
+	{
+	
+	cout<<"Sorry, it's\n";
+	
+	exit (0);
+	}
+
+	cout<<"Please enter the year number .\n";
+	cin>> year;
+	 if (year <1)
+	{
+	
+	cout<<"Sorry, it's\n";
+	
+	exit (0);
+	}
+	
+	
+	
+	
+		switch (month)
+	{
+		
+		case 1:
+		case 3:
+		case 4:
+		case 5:
+		case 6:
+		case 7:
+		case 8:
+		case 9:
+		case 10:
+		case 11:
+		case 12:
+		 cout<<"there are 31 days in \t"<<month<<endl;
+		 break;
+		case 2:
+			cout<<((year%400 ==0)?"there  are 29 days in Frebruay \n":"there  are 28 days in Frebruay\n");
+			break; 
+	}
+		cout<<"The year\t"<<year<<((year%400 ==0)?"\t is a leap year\n":"\t is not a leap year\n");
+		return 0;
+}
+

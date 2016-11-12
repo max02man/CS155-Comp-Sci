@@ -1,0 +1,224 @@
+Ex1
+//alaa Hawsawi,27, counts and prints to screen the number of words
+#include<fstream>
+#include<iostream>
+#include<cstdlib>
+#include<cctype>
+int main ()
+{
+usingnamespacestd;
+ifstream fin;
+fin.open("input.txt") ;
+if(fin.fail())
+{
+	cout<<"Input file opening failed.\n";
+	exit(1); 
+}
+char next;
+fin.get(next);
+int count=0;
+int c=0,s=0;
+int all=0,non_al=0,word=0;
+while (!fin.eof())
+{
+	
+		if(isupper(next))
+		
+			c++;
+		if (islower(next))
+			s++;
+		if (isdigit(next))
+			all++;
+		if (!isalpha(next))
+			non_al++;
+		if (isspace(next))
+			word++;
+		fin.get(next);
+ }
+cout<<"capital leters: "<<c<<endl;
+cout<<"samll letters: "<<s<<endl;
+cout<<"digit charcters: "<<all<<endl;
+cout<<"non-alpha letters: "<<non_al<<endl;
+cout<<"word: "<<word<<endl;
+fin.close();
+cout<<"end of editing files.\n";
+return 0;
+}
+======
+Ex2
+//alaa Hawsawi,27, information for that student ID.
+#include<fstream>
+#include<iostream>
+#include<cstdlib>
+#include<cctype>
+#include<string>
+#include<iomanip>
+usingnamespacestd;
+struct student
+{
+	int ID;
+	string course[5];
+	int credit[5];
+	char grade[5];
+};
+
+int main ()
+{
+ifstream fin;
+ofstreamf out;
+fin.open("insf.txt") ;
+if(fin.fail())
+{
+	cout<<"Input file opening failed.\n";
+	exit(1); 
+}
+fout.open("outsf.txt");
+if(fout.fail())
+{
+	cout<<"output file opening failed.\n";
+	exit(1); 
+}
+student info[5];
+for(int i=0;i<5;i++)
+{
+
+fin>>info[i].ID;
+for (int t=0;t<5;t++)
+{
+		fin>>info[i].course[t];
+		fin>>info[i].credit[t];
+		fin>>info[i].grade[t];
+}
+}
+for(int i=0;i<5;i++)
+{
+fout<<"student Id: "<<info[i].ID<<endl;
+fout<<"Course \t Credit-Hours \t Grade\n";
+for ( int t=0;t<5;t++)
+{
+		fout<<info[i].course[t]<<"\t\t\t";
+		fout<<info[i].credit[t]<<"\t\t\t";
+		fout<<info[i].grade[t]<<endl;
+}
+fout<<endl;
+inttol=0;
+	intgpa=0; 
+	doublegra=0;
+for ( int t=0;t<5;t++)
+{
+		tol += info[i].credit[t];
+		
+		if (info[i].grade[t]=='A')
+			gpa=4;
+		if (info[i].grade[t]=='B')
+			gpa=3;
+		if (info[i].grade[t]=='C')
+			gpa=2;
+		if (info[i].grade[t]=='D')
+			gpa=1;
+		gra+=(gpa*info[i].credit[t]);
+}
+gra=gra/tol;
+fout<<"Total credit hours:\t";
+fout<<tol<<endl;
+fout<<"GPA is: \t"<<gra;
+fout<<endl;
+}
+fin.close();
+fout.close();
+cout<<"end of editing files.\n";
+return 0;
+}
+===
+Ex3
+//alaa Hawsawi,27, the numbers in two files 
+#include<fstream>
+#include<iostream>
+#include<cstdlib>
+#include<cctype>
+using namespace std;
+int main ()
+{
+	int sum=0;
+	int next;
+	ifstream fin1,fin2;
+	fin1.open("input1.txt");
+	fin2.open("input2.txt");
+	ofstream fout;
+	fout.open("output.txt");
+	if(fin1.fail()||fin2.fail()||fout.fail())
+	{
+	cout<<"file opening failed.\n";
+	exit(1); 
+	}
+	while (!fin1.eof() ||!fin2.eof())
+	{
+		fin1>>next;
+		fout<<next<<endl;
+		sum+=next;
+		fin2>>next;
+		fout<<next<<endl;
+		sum+=next;
+	}
+	fout<<"Sum= "<<sum<<endl;
+	fin1.close();
+	fin2.close();
+	fout.close();
+	cout<<"end of editing files.\n";
+	return 0;
+}
+========
+Ex4
+//alaa Hawsawi,27, calculate the sum and the average
+#include<fstream>
+#include<iostream>
+#include<cstdlib>
+#include<cctype>
+using namespace std;
+int main ()
+{
+	int sum=0,next,n=0;
+	double avg;
+
+	ifstream fin;
+	ofstream fout1,fout2;
+	fin.open("input.txt") ;
+	if(fin.fail())
+	{
+		cout<<"Input file opening failed.\n";
+		exit(1); 
+	}
+	fout1.open("output.txt");
+	fout2.open("output2.txt");
+	if(fout1.fail()||fout2.fail())
+	{
+		cout<<"output file opening failed.\n";
+		exit(1); 
+	}
+	while (!fin.eof())
+	{
+		fin>>next;
+		sum+=next;
+		n++;
+	}
+	avg=(sum*(1.0))/n;
+	cout<<"sum: "<<sum<<endl;
+	cout<<"avg: "<<avg<<endl;
+	fin.ignore();
+	fin.close();
+	fin.clear();
+	fin.open("input.txt");
+	while(!fin.eof())
+	{
+		fin>>next;
+		if (next<avg)
+			fout1<<next<<endl;
+		else if (next>avg)
+			fout2<<next<<endl;
+	}
+	fin.close();
+	fout1.close();
+	fout2.close();
+	cout<<"end of editing files.\n";
+	return 0;
+}

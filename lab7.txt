@@ -1,0 +1,250 @@
+//Alaa Hawsawi, 27, perfect numbers
+#include <iostream>
+#include <cmath>
+using namespace std;
+int p (double n,int t);
+int main ()
+{
+	int pe,n=1,t=0 ;
+	cout<<"Perfect Numbers between 1 to 50\n";
+	pe = p (n,t);
+return 0;
+}
+int p (double n, int t)
+{
+	for (n=2;n<=3;n++)
+	{
+	t=(pow (2,n-1))*(pow(2,n)-1);
+	cout<<n-1<<"+"<<n<<"+"<<(pow(2,n)-1)<<"="<<endl;
+		cout<<t<<endl;
+	}
+return (t);
+}
+EX2
+//Alaa Hawsawi, 27, distance
+#include <iostream>
+#include <cmath>
+using namespace std;
+double des(double x1,double x2,double y1,double y2);
+int main ()
+{
+	double x1,x2,y1,y2;
+	cout<<"Enter (x1,x2)\n";
+	cin>>x1>>x2;
+	cout<<"Enter (y1,y2)\n";
+	cin>>y1>>y2;
+	des (x1,x2,y1,y2);
+return 0;
+}
+double des(double x1,double x2,double y1,double y2)
+ {
+	 double x=pow(x1-x2,2);
+	double y=pow(y1-y2,2);
+	double t=sqrt((x)+(y));
+	cout<<"the distance is "<<t<<endl;
+    return (t);
+}
+EX3
+//Alaa Hawsawi, 27, value and reference
+#include <iostream>
+#include <cmath>
+using namespace std;
+double tripbyvalue(double count);
+void  tripbyreference(double & count);
+int main ()
+{
+	double count,count2;
+	cout<<"Enter number to triples by value\n";
+	cin>>count;
+	cout <<"val of count before"<<count<<endl;
+	double val=tripbyvalue(count);
+	cout <<"val of count after"<<count<<endl;
+	cout<<"Enter number to triples by refernce\n";
+	cin>>count2;
+	cout <<"val of count2 before"<<count2<<endl;
+	tripbyreference(count2);
+	cout <<"val of count2 after"<<count2<<endl;
+}
+double tripbyvalue(double value)
+ {
+	 double x=pow(value,3);
+	cout<<"the triples is "<<x<<endl;
+    return (x);
+}
+void tripbyreference(double&value)
+{
+	value =pow(value,3);
+	cout<<"the triples is "<<value <<endl;
+	
+}
+ex4
+//Alaa Hawsawi, 27, value and reference
+#include <iostream>
+using namespace std;
+double avgbyvalue (double n1, double n2, double n3);
+void avgbyreference (double n1, double n2, double n3,double& avg);
+int main ()
+{
+	double n1,n2,n3,avg=0;
+	cout<<"Enter three numbers to avarge\n";
+	cin>>n1>>n2>>n3;
+	cout<<"the average before "<<n1<<","<<n2<<","<<n3<<endl;
+	double t=avgbyvalue(n1,n2,n3);
+	cout<<"the average after "<<t<<endl;
+	cout<<"Enter three numbers to avarge by reference\n";
+	cin>>n1>>n2>>n3;
+	cout<<"the average before "<<n1<<","<<n2<<","<<n3<<endl;
+	avgbyreference (n1,n2,n3,avg);
+	cout<<"the average after "<<avg<<endl;
+	return 0;
+}
+double avgbyvalue (double n1, double n2, double n3)
+{
+	double avg=((n1+n2+n3)/3);
+	cout<<"the average is "<<avg<<endl;
+	return (avg);
+}
+void avgbyreference (double n1, double n2, double n3,double& avg)
+{
+	avg=((n1+n2+n3)/3);
+cout<<"the average is "<<avg<<endl;
+}
+EX5
+//Alaa Hawsawi, 27, converts time
+#include <iostream>
+#include <string>
+using namespace std;
+void convert (int& h, int& m, string t);
+int main ()
+{
+	int h, m;
+	string t=("AM","PM");
+		
+	cout<<"Welcome to converts from 24 hours to 12 hours notation\n";
+	cout<<"Enter the time by 24 Hours\n";
+	cin>>h>>m;
+	cout<<"the time is "<<h<<":"<<m<<endl;
+	convert (h,m,t);
+	cout<<"that time is "<<h<<":"<<m<<t<<endl;
+	return 0;
+}
+void convert (int& h, int& m, string t)
+{
+		if (h>12)
+		{
+		t="PM";
+		h =h-12;
+		}
+		if(h=12)
+		t="PM";
+		if(h=24)
+		{t="AM";
+		h =h-12;}
+		else
+		t="AM";
+	
+}
+EX6
+//Alaa Hawsawi, 27, ICAO
+#include <iostream>
+#include <string>
+using namespace std;
+void word ( char& letter);
+int main ()
+{
+	char t;
+	cout<<"Enter the string to converts to (ICAO) in the end enter (.)"<<endl;
+	word (t);
+	return 0;
+}
+void word ( char& letter)
+{
+	cin>>letter;
+		while (letter!='.')
+			{
+			
+	
+	switch (letter)
+	{
+		case 'a':
+		cout<<"Alpha "<<endl; 
+		break;
+		case 'b':
+		cout<<"Bravo "<<endl; 
+		break;
+		case 'c':
+		cout<<"Charlie "<<endl; 
+		break;
+		case 'd':
+		cout<<"Delta "<<endl; 
+		break;
+		case 'e':
+		cout<<"Echo "<<endl; 
+		break;
+		case 'f':
+		cout<<"Foxtrot "<<endl; 
+		break;
+		case 'g':
+		cout<<"Golf "<<endl; 
+		break;
+		case 'h':
+		cout<<"Hotel "<<endl; 
+		break;
+		case 'i':
+		cout<<"India "<<endl; 
+		break;
+		case 'j':
+		cout<<"Juliet "<<endl; 
+		break;
+		case 'k':
+		cout<<"Kilo "<<endl; 
+		break;
+		case 'l':
+		cout<<"Lima "<<endl; 
+		break;
+		case 'm':
+		cout<<"Mike "<<endl; 
+		break;
+		case 'n':
+		cout<<"November "<<endl; 
+		break;
+		case 'o':
+		cout<<"Oscar "<<endl; 
+		break;
+		case 'p':
+		cout<<"Papa "<<endl; 
+		break;
+		case 'q':
+		cout<<"Quebec "<<endl; 
+		break;
+		case 'r':
+		cout<<"Romeo "<<endl; 
+		break;
+		case 's':
+		cout<<"Sierra "<<endl; 
+		break;
+		case 't':
+		cout<<"Tango "<<endl; 
+		break;
+		case 'u':
+		cout<<"Uniform "<<endl; 
+		break;
+		case 'v':
+		cout<<"Victor "<<endl; 
+		break;
+		case 'w':
+		cout<<"Whiskey "<<endl; 
+		break;
+		case 'x':
+		cout<<"X-ray "<<endl; 
+		break;
+		case 'y':
+		cout<<"Yankee "<<endl; 
+		break;
+		case 'z':
+		cout<<"Zulu "<<endl; 
+		break;
+	}
+	cin>>letter;
+		}
+}

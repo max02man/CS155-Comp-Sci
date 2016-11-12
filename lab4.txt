@@ -1,0 +1,212 @@
+ex2
+//Alaa Hawsawi, 27,
+#include <iostream>
+using namespace std;
+int main()
+{
+	int num, sum=0, max=-99999, min=9999;
+	int counter =20;
+	long int put=1;
+	while (counter>0)
+	{
+		cout<<"enter your number\n";
+		cin>>num;
+		sum=sum+num;
+		
+		put=put*num;
+		
+		if (num > max)
+			max=num;
+		if (num < min)	
+			min=num;
+
+	counter --;
+	}
+	cout<<"sum is"<<sum<<endl;
+	cout<<"Product is"<<put<<endl;
+	cout<<"max is "<<max<<endl;
+	cout<<"min is "<<min<<endl;
+	return 0;
+}
+ex3
+//Alaa Hawsawi, 27,
+#include <iostream>
+using namespace std;
+int main()
+{
+	long double n;
+	int round=1;
+	cin>>n;
+		while (round<=14)
+		{
+				
+			n=n/2;
+			cout<<"round"<<round<<":"<<n<<"meters"<<endl;
+			round++;
+		}
+	return 0;
+}
+-------------------------
+do-while
+ex1
+//Alaa Hawsawi, 27, do-while sum
+#include <iostream>
+using namespace std;
+int main()
+{
+	int num;
+	int sum=0;
+	cout<<"Please enter the number you want to sum\n";
+	cin>>num;
+	do
+	{
+		
+		sum=sum+(num*num);
+	
+	}while (num-->0);
+	cout<<"the sum is\t"<<sum<<endl;
+	return 0;
+}
+ex2
+//Alaa Hawsawi, 27,calculator
+
+#include <iostream>
+using namespace std;
+int main ()
+{
+	int code, n1, n2;
+	cout<<"1.Add two integer numbers\n";
+	cout<<"2.Subtract two integer numbers\n";
+	cout<<"3.Multiply two integer numbers\n";
+	cout<<"4.Divide two integer numbers(second number should not be zero)\n";
+	cout<<"5.Exit\n";
+	do
+	{
+	cout<<"choise 1,2,3,4 or 5"<<endl;
+	cin>>code;
+	
+	switch (code)
+	{
+	case 1:
+		cout<<"enter the two numbers\n";
+		cin>>n1>>n2;
+		cout<<n1<<"+"<<n2<<"="<<(n1 + n2)<<endl; 
+		break;
+
+	case 2:
+		cout<<"enter the two numbers\n";
+		cin>>n1>>n2;
+		cout<<n1<<"-"<<n2<<"="<<(n1 - n2)<<endl; 
+		break;
+	case 3:
+		cout<<"enter the two numbers\n";
+		cin>>n1>>n2;
+		cout<<n1<<"*"<<n2<<"="<<(n1 * n2)<<endl; 
+		break;
+	case 4:
+		cout<<"enter the two numbers\n";
+		cin>>n1>>n2;
+		cout<<n1<<"/"<<n2<<"="<<(n1 / n2)<<endl; 
+		break;
+	case 5:
+		cout<<"Exit\n";
+		break;
+	
+	}
+	}while (code < 5);
+	
+	return 0;
+}
+ex3
+//Alaa Hawsawi, 27,calculator
+
+#include <iostream>
+using namespace std;
+int main ()
+{
+	int  n1, n2, count=0;
+	cout<<"enter the number you want to see the multiplication table for\n";
+	cin>>n1;
+	do
+	{
+	n2=n1*count;
+	cout<<n1<<"\t X \t"<<count<<"= \t"<<n2<<endl;
+	}while (count++<12);
+	
+	return 0;
+}
+--------------------------
+for loop
+ex1
+//Alaa hawsawi, 27, sum, for-loop
+#include <iostream>
+using namespace std;
+int main ()
+{
+	int n1,sum=0;
+	cout<<"enter how many numbers would you like to sum.\n";
+	cin>>n1;
+	for(n1; n1>0;n1--)
+	{
+		
+		sum=sum+(n1*n1);
+	}
+	cout<<"the sum is "<<sum<<endl;
+	return 0;
+}
+ex2
+//Alaa hawsawi, 27, 3-sums, for-loop
+#include <iostream>
+using namespace std;
+int main ()
+{
+	int n1;
+	int sn=0, sp=0, sa=0;
+	int count;
+	cout<<" how many numbers would you like to enter?.\n";
+	cin>>count;
+	for(count;count>0;count--)
+	{
+		cout<<"enter the numbers would you like to sum\n";
+		cin>>n1;
+			
+			if (n1>0)
+			{
+			sp=sp+n1;
+			cout<<"you entered  "<< n1<<endl;
+			cout<<"the postive sum is "<<sp<<endl;
+
+			}
+			if (n1<=0)
+			{
+			sn=sn+n1;
+			cout<<"you entered  "<<n1<<endl;
+			cout<<"the negtive sum is "<<sn<<endl;
+			}
+			sa=sa+n1;
+			cout<<"the sum is "<<sa<<endl;
+			
+	}
+	
+	return 0;
+}
+ex3
+//Alaa hawsawi, 27, digits, for-loop
+#include <iostream>
+using namespace std;
+int main ()
+{
+    long int di = 0;
+	long int num;
+	cout<<"Enter any number to see how many digits in\n";
+	cin>>num;
+	for (di=1; di<num;di++)
+	{
+	num= num /=10;
+  
+	if (num==0)
+		;
+    }
+	cout<<di<<"  digits\n";
+	return 0;
+}

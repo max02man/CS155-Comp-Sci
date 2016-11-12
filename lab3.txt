@@ -1,0 +1,169 @@
+//Alaa Hawsawi, 27
+
+#include <iostream>
+using namespace std;
+int main ()
+{
+	int one, two;
+	cout<<"enter two numbers to see if mulitple or not\n";
+	cin>>one;
+	cin>>two;
+	if ((one%two ==0) || (two%one ==0))
+		cout<< "it's multiple\n";
+	else
+		cout<<"it's not multiple\n";
+	return 0;
+}
+
+
+ex2
+//Alaa Hawsawi, 27
+
+#include <iostream>
+using namespace std;
+int main ()
+{
+	int shipping;
+	cout<<" Welcome to Shipping Cost\n";
+	cout<<"enter 1 if you want to shipping through 0 and less than 99\n";
+	cout<<"enter 2 if you want to shipping through 100 and less than 300\n";
+	cout<<"enter 3 if you want to shipping through 500 and less than 600\n";
+	cout<<"enter 4 if you want to shipping through 600 and less than 1000\n";
+	cin>>shipping;
+	switch (shipping)
+	{
+	case 1:
+		cout<<" it's cost $5.00"<<endl; 
+		break;
+
+	case 2:
+		cout<<" it's cost $8.00"<<endl; 
+		break;
+	case 3:
+		cout<<" it's cost $10.00"<<endl; 
+		break;
+	case 4:
+		cout<<" it's cost $12.00"<<endl; 
+		break;
+	}
+	return 0;
+}
+ex3
+//Alaa Hawsawi, 27
+
+#include <iostream>
+using namespace std;
+int main ()
+{
+	int num1, num2, num3, num4, num5, num6;
+	cout<<" Enter six digit\n";
+	cin>>num1>>num2>>num3>>num4>>num5>>num6;
+	cout<<num6<<endl;
+	cout<< num5<<endl;
+	cout<< num4<<endl;
+	cout<< num3<<endl;
+	cout<<num2<<endl;
+	cout<< num1<<endl;
+	cout<<"the integer division:"<<num6<< num5<< num4<< num3<< num2<< num1<<"/ 100000 is\t"<< num6<<endl;
+	cout<<"the MOD operator:"<<num6<< num5<< num4<< num3<< num2<<num1<<"% 100000 is\t"<< num5<< num4<< num3<< num2<< num1<<endl;
+	return 0;
+}
+
+ex4
+//Alaa Hawsawi, 27
+
+#include <iostream>
+using namespace std;
+int main ()
+{
+	int num1, num2, num3, num4, num5, num6;
+	cout<<" Enter six digit\n";
+	cin>>num1>>num2>>num3>>num4>>num5>>num6;
+	cout<<num6<< num5<< num4<< num3<< num2<< num1<<endl;
+	return 0;
+}
+
+ex5
+//Alaa Hawsawi, 27
+
+#include <iostream>
+using namespace std;
+int main ()
+{
+	int num=77;
+	char value =(char)num;
+	cout<<value<<endl;
+	return 0;
+}
+
+ex6
+//Alaa Hawsawi, 27
+
+#include <iostream>
+using namespace std;
+int main ()
+{
+	int balance, amount;
+	char tarnscode ;
+	cout<<"enter the balance and the amount\n";
+	cin>>balance;
+	cin>>amount;
+	cout<<"to increases balance by adding amount prase (I)\n"<<"to decreases balance by adding amount prase (D)\n"<<"to display value of balance  prase (P)\n";
+	cin>>tarnscode;
+	switch (tarnscode)
+	{
+	case 'I':
+	case 'i':
+		cout<<(balance + amount)<<endl; 
+		break;
+
+	case 'D':
+	case 'd':
+		cout<<(balance - amount)<<endl; 
+		break;
+	case 'P':
+	case 'p':
+		cout<< balance <<endl; 
+		break;
+	default:
+		cout<<"illegal-transaction"<<endl; 
+		break;
+	}
+	return 0;
+}
+ex7
+//Alaa Hawsawi, 27
+
+#include <iostream>
+using namespace std;
+int main ()
+{
+	double  a,b;
+	char sign;
+	cout<<"enter amount for 'a'\n";
+	cin>>a;
+	cout<<"enter amount for 'b'\n";
+	cin>>b;
+	cout<<"to add amount 'a' to amount 'b'prase (+)\n"<<"to decreases amount 'a' to amount 'b' prase (-)\n"<<"to multiply amount 'a' to amount 'b'  prase (*)\n"<<"to divide to multiply amount 'a' to amount 'b'  prase (/)\n";
+	cin>>sign;
+	switch (sign)
+	{
+	case '+':
+		cout<<(a + b)<<endl; 
+		break;
+
+	case '-':
+		cout<<(a - b)<<endl; 
+		break;
+	case '*':
+		cout<<(a * b)<<endl; 
+		break;
+	case '/':
+		cout<<(a / b)<<endl; 
+		break;
+	default:
+		cout<<"illegal-operator"<<endl; 
+		break;
+	}
+	return 0;
+}

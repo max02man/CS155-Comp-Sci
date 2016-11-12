@@ -1,0 +1,215 @@
+//alaa hawsawi,27,person's name
+#include<iostream>
+using namespace std;
+int main()
+{
+	char f_name[10], l_name[10],m_name, choice;
+
+	do
+	{
+	cout<<"Enter your full name:";
+	cin>>(f_name);
+	cin>>(m_name);
+	cin>>(l_name);
+	cout<<l_name<<", "<<f_name<<" "<<m_name<<"."<<endl;
+	cout<<endl;
+	cout<<"would you like to repeat? Y/N)";
+	cin>>choice;
+	}while (choice == 'y' || choice == 'Y');
+	cout<<endl;
+	
+	return 0;
+}
+ex2
+//alaa hawsawi,27,mail tag
+#include<iostream>
+#include<istream>
+
+using namespace std;
+int main()
+{
+	char title[5],f_name[10], l_name[10],m_name, city[10],sa[10],st_n[15];
+	int zip,st; 
+	cout<<"Enter your full name:";
+	cin>>title;
+	cin>>(f_name);
+	cin>>(m_name);
+	cin>>(l_name);
+	cout<<"Enter your street # and name: ";
+	cin>>st;
+	cin>>st_n;
+	cout<<"Enter your city, state name and the zipcode: ";
+	cin>>(city)>>(sa);
+	cin>>(zip);
+	cout<<endl;
+	cout<<title<<". "<<f_name<<" "<<m_name<<". "<<l_name<<endl;
+	cout<<st<<" "<<st_n<<endl;
+	cout<<city<<", "<<sa<<" "<<zip<<endl;
+	cout<<"------------------------------------------------------------\n";
+	cout<<"Title:\t"<<title<<endl;
+	cout<<"First Name:\t"<<f_name<<endl;
+	cout<<"Middle Inital:\t"<<m_name<<endl;
+	cout<<"Last Name:\t"<<l_name<<endl;
+	cout<<"Street Address:\t"<<st<<" "<<st_n<<endl;
+	cout<<"City:\t"<<city<<endl;
+	cout<<"State:\t"<<sa<<endl;
+	cout<<"Zipcode:\t"<<zip<<endl;
+
+	return 0;
+}
+ex3
+//alaa hawsawi, 27, replaces 4 letter words.
+#include<iostream>
+#include<string>
+using namespace std;
+
+int main()
+{
+string word=" ";
+string sent=" ";
+cout<<"enter your sentence"<<endl;
+
+while (word != ".")
+{
+cin>>word;
+		if (word.length()==4)
+		{
+			if (isupper(word[0]))
+				{
+					sent="|--- ";
+				}
+			else
+				sent="---- ";
+		}
+if (word.length()!=4)
+		{	
+	cout<<word<<" ";
+		}
+else
+	cout<<sent;
+}
+	return 0;
+}
+ex4
+//alaa hawsawi, 27, pig Latin
+#include<iostream>
+#include<string>
+using namespace std;
+void cove( string f);
+void covel (string l);
+void pigf (string f);
+void pigl (string l);
+int main()
+{
+string f,l;
+cout<<"enter you first and last name"<<endl;
+cin>>f>>l;
+cove(f);
+covel(l);
+pigf(f);
+pigl(l);
+	return 0;
+}
+void cove( string f) 
+{ 
+	for (unsigned int x=0; x< f.length();x++)
+	{
+		f[x]= tolower(f[x]);
+	}
+	cout<<f<<" ";
+}
+void covel (string l)
+	{ 
+	for (unsigned int x=0; x< l.length();x++)
+	{
+		l[x]=tolower(l[x]);
+	}
+	cout<<l<<endl;
+}
+void pigf (string f)
+{
+	if (f[0] == 'a' || f[0] == 'e' || f[0] == 'i' || f[0] == 'o' || f[0] == 'u'||f[0] == 'A' || f[0] == 'E' || f[0] == 'I' || f[0] == 'O' || f[0] == 'U')
+	{
+		for (unsigned int x=0; x< f.length();x++)
+	{
+		f[0]= toupper(f[0]);
+		f[x]= tolower(f[x]);
+	}
+		cout<<f<<"way ";
+	}
+	else
+	{
+	for (unsigned int x=1; x < f.size();x++)
+	{
+		if (f[x] == 'a' || f[x] == 'e' || f[x] == 'i' || f[x] == 'o' || f[x] == 'u'||f[0] == 'A' || f[0] == 'E' || f[0] == 'I' || f[0] == 'O' || f[0] == 'U')
+		{
+		f[1]= toupper(f[1]);
+		 cout<<f[x];
+		}
+		else
+		{
+			f[x]= tolower(f[x]);
+			cout<<f[x];
+		}
+	}
+	f[0]= tolower(f[0]);
+	cout<<f[0]<<"ay ";
+	}
+}
+void pigl (string l)
+{
+		if (l[0] == 'a' || l[0] == 'e' || l[0] == 'i' || l[0] == 'o' || l[0] == 'u'|| l[0] == 'A' || l[0] == 'E' || l[0] == 'I' || l[0] == 'O' || l[0] == 'U')
+	{
+		for (unsigned int x=0; x< l.length();x++)
+	{
+		l[0]= toupper(l[0]);
+		l[x]= tolower(l[x]);
+	}
+		cout<<l<<"way."<<endl;
+	}
+		else
+	{
+	for (unsigned int x=1; x < l.size();x++)
+	{
+		if (l[x] == 'a' || l[x] == 'e' || l[x] == 'i' || l[x] == 'o' || l[x] == 'u'||l[0] == 'A' || l[0] == 'E' || l[0] == 'I' || l[0] == 'O' || l[0] == 'U')
+		{
+			l[1]= toupper(l[1]);
+			cout<<l[x];
+		}
+		else
+		{
+		cout<<l[x];
+		}
+}
+	l[0]= tolower(l[0]);
+	cout<<l[0];
+	cout<<"ay.";
+	cout <<endl;
+	}
+}
+Ex 5
+//Alaa Hawsawi, 27,correct sentence
+#include <iostream>
+#include <cstring>
+#include <cctype>
+using namespace std;
+void takeLine(char sentence[]);
+int main()
+{
+  char sentence[100];
+  cout << "Enter a sentence\n ";
+  cin.get(sentence, 99);
+  cout << endl;
+  takeLine(sentence);
+  cin.get();
+  return 0;
+}
+void takeLine(char sentence[])
+{
+    int i = 0;
+    sentence[i] = toupper(sentence[i]); 
+    i++;
+    for (i; i < strlen(sentence); i++) 
+     sentence[i] = tolower(sentence[i]);
+    cout << sentence << endl;
+}

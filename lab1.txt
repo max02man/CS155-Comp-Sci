@@ -1,0 +1,107 @@
+Ex1
+/*
+Alaa Hawsawi, #27. print the block letter B
+*/
+#include <iostream>
+using namespace std;
+int main()
+{
+	cout <<"*****\n";
+	cout <<"*     *\n";
+	cout <<"*     *\n";
+	cout <<"*****\n";
+	cout <<"*     *\n";
+	cout <<"*     *\n";
+	cout <<"*****\n";
+return 0;
+
+}
+Ex2
+/*
+Alaa hawsawi, 27. Read two integer numbers
+*/
+#include <iostream>
+using namespace std;
+int main ()
+{
+	int num1;
+	int num2;
+	int sum;
+	int product;
+	cout<<"Please enter first number\n";
+	cin>>num1;
+	cout<<"Please enter second number\n";
+	cin>>num2;
+	sum=num1+num2;
+	cout<<"Summation=";
+	cout<<sum<<endl;
+	product=num1*num2;
+	cout<<"Product=";
+	cout<<product<<endl;
+	return 0;
+}
+Ex3
+/*
+Alaa Hawsawi, 27, employment
+*/
+#include <iostream>
+#include <string>
+using namespace std;
+int main()
+{
+	string firstname, lastname;
+	char gender;
+	int year, age;
+	double salary;
+	cout<<"Enter your first name and last name"<<"."<<endl;
+	cin>>firstname;
+	cin>>lastname;
+
+	cout<<"Enter your gender? M=Male, F=female\n";
+	cin>>gender;
+
+	cout<<"Enter your year of employment and your age\n";
+	cin>>year;
+	cin>>age;
+
+	cout<<"Enter your salary\n";
+	cin>>salary;
+	cout<<"First Name:\t"<<firstname<<endl;
+	cout<<"Last Name:\t"<<lastname<<endl;
+	cout<<"Gender:\t"<<gender<<endl;
+	cout<<"Year of Employment:\t"<<year<<endl;
+	cout<<"Age:\t"<<age<<endl;
+	cout<<"Salray:\t"<<salary<<endl;
+	return 0;
+}
+Ex4
+/*
+Alaa Hawsawi, 27, Total Purchase Amount
+*/
+#include <iostream>
+using namespace std;
+int main()
+{
+	int amount1;
+	int amount2;
+	double price1;
+	double price2;
+	double totalamount;
+	cout<<"Enter Number of items of Unit 1\n";
+	cin>>amount1;
+	cout<<"Enter price of one item of Unit 1\n";
+	cin>>price1;
+	cout<<"Enter Number of items of Unit 2\n";
+	cin>>amount2;
+	cout<<"Enter price of one item of Unit 2\n";
+	cin>>price2;
+	cout<<"Number of items of Unit 1 :"<<amount1<<endl;
+	cout<<"Number of items of Unit 2 :"<<amount2<<endl;
+	cout<<"price of one item of Unit 1 :"<<price1<<endl;
+	cout<<"Price of one item of Unit 2 :"<<price2<<endl;
+	
+	totalamount = (amount1 * price1) + (amount2 * price2);
+	cout<<"Total Purchase Amount.\t"<<totalamount<<endl;
+	return 0;
+}
+

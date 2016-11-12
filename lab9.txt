@@ -1,0 +1,232 @@
+ex1
+//Alaa Hawsawi, 27, Matrix multiplication
+#include <iostream>
+using namespace std;
+int main ()
+{
+	int a[3][3]={{1,0,0},{1,0,-1},{0,1,-1}},b[3][3]={{1,2,3},{2,3,4},{2,4,6}},c[3][3];
+	for (int t=0;t<3;t++)
+	{
+		for (int j=0;j<3;j++)
+		{
+			c[t][j]=(a[t][0]*b[0][j])+(a[t][1]*b[1][j])+(a[t][2]*b[2][j]);
+		}
+	}
+	for (int t=0;t<3;t++)
+	{
+		for (int j=0;j<3;j++)
+		{
+			cout<<c[t][j]<<"  ";
+		}
+	cout<<endl;
+	}
+	return 0;
+}
+ex2
+//Alaa Hawsawi, 27, 
+#include <iostream>
+using namespace std;
+int small(const int q1[][2],int m, int k);
+void sawp_v (int&v1,int& v2,int& v3, int&v4);
+void sort (int q1[][2], int k);
+
+int main ()
+{
+	int q1[5][2],k=5;
+	cout<<"enter the grads for quiz one and two"<<endl;
+	for (int i=0; i<5;i++)
+	{	
+		for (int d=0;d<2;d++)
+		cin>>q1[i][d];
+	}
+	cout<<endl;
+		sort ( q1,k);
+		for (int i=0; i<5;i++)
+	{	
+		for (int d=0;d<2;d++)
+		cout<<q1[i][d]<<"  ";
+		cout<<endl;
+	}
+		cout<<endl;
+
+
+	return 0;
+}
+void sort (int q1[][2], int num)
+{
+	int smalln;
+	for (int index =0;index<num-1;index++)
+	{
+		smalln=small (q1,index,num);
+		sawp_v(q1[index][0],q1[smalln][0],q1[index][1],q1[smalln][1]);
+	}
+}
+	void sawp_v (int&v1,int& v2,int& v3, int&v4)
+{
+				
+				int temp=v1;
+				v1=v2;
+				v2=temp;
+				int temp1=v3;
+				v3=v4;
+				v4=temp1;
+
+}
+
+int small( const int q1[][2],int si, int num)
+	{
+		int min=q1[si][0], index_min =si;
+		
+		for(int index=si+1;index<num;index++)
+		{
+			if (q1[index][0]<min)
+			{
+				min=q1[index][0];
+				index_min=index;
+			}
+		}
+			return index_min;
+}
+
+
+ex3
+//Alaa Hawsawi, 27, Removes
+#include <iostream>
+using namespace std;
+void removeall (int testedarray[],int&size, int item);
+int main ()
+{
+	int size=9, item=1;
+	int testedarray[9]= {1,2,1,4,5,3,5,2,1};
+	for (int i=0;i<size;i++)
+	{
+		cout<<testedarray[i]<<"\t";
+	}
+	cout<<endl;
+	removeall (testedarray,size,item);
+
+
+	return 0;
+}
+void removeall (int testedarray[],int&size, int item)
+{
+
+
+	for (int i=0;i<size;i++)
+	{
+		if (testedarray[i]==item)
+		{
+			size= size-1;
+			for (int j=i;j<size;j++)
+			{
+				testedarray[j]=testedarray[j+1];
+			}
+		}
+	}
+	for (int i=0;i<size;i++)
+	{
+		cout<<testedarray[i]<<"  ";
+	}
+	cout<<endl;
+
+}
+
+ex4 
+//Alaa Hawsawi, 27, Rotates
+#include <iostream>
+using namespace std;
+void rotate (int a[], int n, int k);
+void swap_v(int a[], int n);
+int main ()
+{
+	int a[]={22,33,44,55,66,77,88,99},n=8,k=3;
+	cout<<"{";
+	for (int i=0;i<n;i++)
+	{
+	cout<<a[i]<<",";
+	}cout<<"}"<<endl;
+	rotate(a,n,k);
+	cout<<"{";
+	for (int i=0;i<n;i++)
+	{	
+		cout<<a[i]<<",";
+	}
+	cout<<"}"<<endl;
+	return 0;
+}
+void rotate (int a[], int n, int k)
+{
+  int i;
+  for (i = 0; i < k; i++)
+    swap_v(a,n);
+
+}
+ 
+void swap_v(int a[], int n)
+{
+  int i, temp;
+  temp = a[n-1];
+  for (i = n-1; i > 0; i--)
+	  a[i] = a[i-1];
+	a[0] = temp;
+}
+ex5
+//Alaa Hawsawi, 27, Vector
+#include <iostream>
+#include <vector>
+using namespace std;
+
+int main ()
+{
+	int num,sum=0, avg=0, max=-999, min=999;
+	vector<int>t;		
+	cout<<"enter positive number for sum: ";
+	cin>>num;
+	if(num<0)
+		return 0;
+	else 
+	t.push_back(num);
+	cout<<"enter positive number for avg: ";
+	cin>>num;
+	if(num<0)
+		return 0 ;
+	else 
+	t.push_back(num);
+	cout<<"enter positive number for max: ";
+	cin>>num;
+	if(num<0)
+		return 0 ;
+	else 
+	t.push_back(num);
+	cout<<"enter positive number for min: ";
+	cin>>num;
+	if(num<0)
+		return 0 ;
+	else 
+	t.push_back(num);
+	for (unsigned int i=0; i<t.size();i++)
+		cout<<t[i]<<"  ";
+	cout<<endl;
+	for(unsigned int y=0;y<t.size();y++)
+		{
+		sum += t[y];
+		avg= t[y]/t.size();
+		}
+		
+		for(unsigned int o=0;o<t.size();o++)
+		{
+			if (t[o]>max)
+				max=t[o];
+		}
+		for (unsigned int w=0;w<t.size();w++)
+		{		
+			if (t[w]<min)
+			min=t[w];
+		}
+		avg= sum/t.size();
+		cout<<"The sum is "<<sum<<endl;
+		cout<<"the average is "<<avg<<endl;
+		cout<<"The max is "<<max<<endl;
+		cout<<"The minimum is "<<min<<endl;
+		return 0;
+}
